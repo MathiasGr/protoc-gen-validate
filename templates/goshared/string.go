@@ -120,6 +120,10 @@ const strTpl = `
 		if err := m._validateUuid({{ accessor . }}); err != nil {
 			return {{ errCause . "err" "value must be a valid UUID" }}
 		}
+	{{ else if $r.GetDateTime }}
+		if _, err := time.Parse(time.RFC3339Nano, {{ accessor . }}); err != nil {
+			return {{ errCause . "err" "value must be a valid RFC3339 date" }}
+		}
 	{{ end }}
 
 	{{ if $r.Pattern }}

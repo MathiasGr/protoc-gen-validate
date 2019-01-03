@@ -553,6 +553,10 @@ message StringRules {
         // Uuid specifies that the field must be a valid UUID as defined by
         // RFC 4122
         bool uuid     = 22;
+
+        // DateTime specifies that the field must be a valid DateTime as defined
+        // by RFC 3339
+        bool date_time = 24;
     }
 }
 
