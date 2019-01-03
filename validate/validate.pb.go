@@ -2010,6 +2010,8 @@ type StringRules struct {
 	//	*StringRules_Address
 	//	*StringRules_Uuid
 	//	*StringRules_WellKnownRegex
+	//	*StringRules_DateTime
+	//	*StringRules_OptionalDateTime
 	WellKnown isStringRules_WellKnown `protobuf_oneof:"well_known"`
 	// This applies to regexes HTTP_HEADER_NAME and HTTP_HEADER_VALUE to enable
 	// strict header validation.
@@ -2331,6 +2333,30 @@ func (*StringRules_Address) isStringRules_WellKnown() {}
 func (*StringRules_Uuid) isStringRules_WellKnown() {}
 
 func (*StringRules_WellKnownRegex) isStringRules_WellKnown() {}
+
+func (*StringRules_Email) isStringRules_WellKnown() {}
+
+func (*StringRules_Hostname) isStringRules_WellKnown() {}
+
+func (*StringRules_Ip) isStringRules_WellKnown() {}
+
+func (*StringRules_Ipv4) isStringRules_WellKnown() {}
+
+func (*StringRules_Ipv6) isStringRules_WellKnown() {}
+
+func (*StringRules_Uri) isStringRules_WellKnown() {}
+
+func (*StringRules_UriRef) isStringRules_WellKnown() {}
+
+func (*StringRules_Address) isStringRules_WellKnown() {}
+
+func (*StringRules_Uuid) isStringRules_WellKnown() {}
+
+func (*StringRules_WellKnownRegex) isStringRules_WellKnown() {}
+
+func (*StringRules_DateTime) isStringRules_WellKnown() {}
+
+func (*StringRules_OptionalDateTime) isStringRules_WellKnown() {}
 
 // BytesRules describe the constraints applied to `bytes` values
 type BytesRules struct {

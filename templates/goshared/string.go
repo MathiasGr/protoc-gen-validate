@@ -173,6 +173,16 @@ const strTpl = `
 			if !all { return err }
 			errors = append(errors, err)
 		}
+	{{ else if $r.GetDateTime }}
+		if _, err := time.Parse(time.RFC3339Nano, {{ accessor . }}); err != nil {
+			return {{ errCause . "err" "value must be a valid RFC3339 date" }}
+		}
+	{{ else if $r.GetOptionalDateTime }}
+		if {{ accessor . }} != "" {
+			if _, err := time.Parse(time.RFC3339Nano, {{ accessor . }}); err != nil {
+				return {{ errCause . "err" "value must be a valid RFC3339 date" }}
+			}
+		}
 	{{ end }}
 
 	{{ if $r.Pattern }}
