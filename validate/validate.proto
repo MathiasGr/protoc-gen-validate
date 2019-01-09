@@ -557,6 +557,10 @@ message StringRules {
         // DateTime specifies that the field must be a valid DateTime as defined
         // by RFC 3339
         bool date_time = 24;
+
+        // OptionalDateTime specifies that the field must be either empty or a 
+        // valid DateTime as defined by RFC 3339
+        bool optional_date_time = 25;
     }
 }
 
