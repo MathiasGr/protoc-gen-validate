@@ -609,11 +609,11 @@ message StringRules {
 
         // DateTime specifies that the field must be a valid DateTime as defined
         // by RFC 3339
-        bool date_time = 26;
+        bool date_time = 27;
 
         // OptionalDateTime specifies that the field must be either empty or a
         // valid DateTime as defined by RFC 3339
-        bool optional_date_time = 27;
+        bool optional_date_time = 28;
     }
 
   // This applies to regexes HTTP_HEADER_NAME and HTTP_HEADER_VALUE to enable
